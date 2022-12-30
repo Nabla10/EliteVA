@@ -111,12 +111,14 @@ public class Plugin
 
         });
         
-        _api.Events.OnAny(e =>
+        _api.Events.OnAnyJson(e =>
         {
             try
             { 
-                var paths = _api.EventParser.ToPaths(e);
-                
+                var paths = _api.EventParser.ToPaths(e).ToArray();
+
+                var eventName = paths.First(x => x.Path.EndsWith(".Event")).Value;
+                    
                 foreach (var path in paths)
                 {
                     var value = path.Value;
@@ -146,13 +148,13 @@ public class Plugin
                 // Get the path to the plugin's folder
                 File.WriteAllLines(Path.Combine(Dir, "event variables.txt"), variables);
                 
-                var command = $"((EliteAPI.{e.Event}))";
+                var command = $"((EliteAPI.{eventName}))";
                 if (Proxy.Commands.Exists(command))
                     Proxy.Commands.Invoke(command);
             }
             catch (Exception ex)
             {
-                Proxy.Log.Write($"Error while trying to process {e.Event} event: {ex}", VoiceAttackColor.Red);
+                Proxy.Log.Write($"Error while trying to process event: {ex}", VoiceAttackColor.Red);
             }
         });
         

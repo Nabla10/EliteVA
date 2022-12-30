@@ -50,6 +50,8 @@
         <Compile Include="Proxy\Variables\VoiceAttackVariables.cs" />
         <Compile Include="Proxy\Versions\VoiceAttackVersions.cs" />
         <Compile Include="Proxy\VoiceAttackProxy.cs" />
+        <Compile Include="VoiceAttackLogger.cs" />
+        <Compile Include="VoiceAttackLoggerProvider.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="App.config" />

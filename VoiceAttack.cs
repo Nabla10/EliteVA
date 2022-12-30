@@ -27,7 +27,7 @@ public class VoiceAttack
             
         try
         {
-            Initialize(vaProxy);
+            Initialize(Proxy);
         }
         catch (Exception ex)
         {
@@ -45,7 +45,7 @@ public class VoiceAttack
         Proxy = new VoiceAttackProxy(vaProxy);
     }
 
-    private static void Initialize(dynamic vaProxy)
+    private static void Initialize(VoiceAttackProxy proxy)
     {
         Host = Microsoft.Extensions.Hosting.Host.CreateDefaultBuilder()
             .ConfigureServices(s =>
@@ -56,6 +56,7 @@ public class VoiceAttack
             .ConfigureLogging(l =>
             {
                 l.SetMinimumLevel(LogLevel.Information);
+                l.AddProvider(new VoiceAttackLoggerProvider(proxy));
             })
             .Build();
         
