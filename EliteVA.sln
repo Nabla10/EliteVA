@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EliteVA", "EliteVA.csproj", "{960F359F-0801-4BD4-92D4-0B996F9E92AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfileGenerator", "ProfileGenerator\ProfileGenerator.csproj", "{D50BE332-A76E-4971-94C2-9B939D0B699E}"
@@ -18,5 +21,11 @@ Global
 		{D50BE332-A76E-4971-94C2-9B939D0B699E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D50BE332-A76E-4971-94C2-9B939D0B699E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D50BE332-A76E-4971-94C2-9B939D0B699E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D1ADF15-1167-4586-9C3B-6F2CC470437A}
 	EndGlobalSection
 EndGlobal
